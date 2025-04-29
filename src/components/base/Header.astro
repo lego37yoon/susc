@@ -41,11 +41,11 @@ const links = [
 
     function toggleNavlinks() {
         if (isToggled) {
-            navlinks.classList.add("!visible", "!scale-100", "!opacity-100", "!lg:translate-y-0");
+            navlinks.classList.add("visible!", "scale-100!", "opacity-100!", "!lg:translate-y-0");
             hamburger.classList.add("toggled");
             layer.classList.add("origin-top", "scale-y-100");
         } else {
-            navlinks.classList.remove("!visible", "!scale-100", "!opacity-100", "!lg:translate-y-0");
+            navlinks.classList.remove("visible!", "scale-100!", "opacity-100!", "!lg:translate-y-0");
             hamburger.classList.remove("toggled");
             layer.classList.remove("origin-top", "scale-y-100");
         }
@@ -108,6 +108,8 @@ const links = [
 </header>
 
 <style>
+    @reference "../../styles/global.css";
+
     #toggle_nav:checked ~ div #hamburger #line {
         @apply translate-y-1.5 rotate-45;
     }

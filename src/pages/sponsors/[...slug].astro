@@ -1,11 +1,12 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
+import { type CollectionEntry, getCollection, render } from 'astro:content';
 import SponsorLayout from '../../layouts/SponsorLayout.astro';
+import "../../styles/global.css";
 
 export async function getStaticPaths() {
 	const posts = await getCollection('sponsors');
 	return posts.map((post) => ({
-		params: { slug: post.slug },
+		params: { slug: post.id },
 		props: post,
 	}));
 }
@@ -13,7 +14,7 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<'sponsors'>;
 
 const post = Astro.props;
-const { Content } = await post.render();
+const { Content } = await render(post);
 ---
 
 <SponsorLayout {...post.data}>

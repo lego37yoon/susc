@@ -1,7 +1,10 @@
+function breakpoints(screens) {
+
+}
+
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
-  presets: [],
   darkMode: "media", // or 'class'
   theme: {
     screens: {
@@ -646,7 +649,7 @@ module.exports = {
       max: "max-content",
       fit: "fit-content",
     }),
-    maxWidth: ({ theme, breakpoints }) => ({
+    maxWidth: ({ theme }) => ({
       none: "none",
       0: "0rem",
       xs: "20rem",

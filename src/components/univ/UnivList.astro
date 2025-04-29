@@ -20,7 +20,7 @@ const univs = await getCollection("univ")
       {
         univs.map((univ) => (
           <UnivCard
-            path={`/univ/${univ.slug}/`}
+            path={`/univ/${univ.id}/`}
             univName={univ.data.univName}
             univImg={`${univ.data.univImg}`}
             clubList={univ.data.clubList}

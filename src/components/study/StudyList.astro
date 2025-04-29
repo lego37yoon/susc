@@ -29,7 +29,7 @@ const currentStudy = await getCollection("study");
 			{
 				currentStudy.map((study) => (
 					<StudyCard
-						path={`/study/${study.slug}/`}
+						path={`/study/${study.id}/`}
 						studyName={study.data.studyName}
 						studyImg={study.data.studyImg}
 						studyType={study.data.studyType}

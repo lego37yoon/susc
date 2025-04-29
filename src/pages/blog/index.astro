@@ -6,6 +6,7 @@ import FormattedDate from '@components/base/FormattedDate.astro';
 import Container from '@components/base/Container.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
+import "../../styles/global.css";
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
@@ -39,7 +40,7 @@ const posts = (await getCollection('blog')).sort(
 						{
 							posts.map((post) => (
 								<li class="mt-12">
-									<a href={`/blog/${post.slug}/`} class="lg:flex">
+									<a href={`/blog/${post.id}/`} class="lg:flex">
 										<img class="object-cover w-full lg:mx-6 lg:w-1/4 rounded-xl h-52" src={post.data.heroImage} alt="" />
 										<div class="mt-6 lg:w-3/4 lg:mt-0 lg:mx-6 flex flex-col justify-between">
 											<div>

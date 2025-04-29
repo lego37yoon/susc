@@ -1,14 +1,19 @@
 import { defineConfig } from "astro/config";
-import vercelServerless from '@astrojs/vercel/serverless';
 import mdx from "@astrojs/mdx";
-import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 import react from "@astrojs/react";
+import tailwindcss from "@tailwindcss/vite";
+import vercel from "@astrojs/vercel";
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'hybrid',
-  adapter: vercelServerless(),
+  output: 'static',
+  adapter: vercel(),
   site: "https://susc.kr",
-  integrations: [mdx(), sitemap(), tailwind(), react()]
+  integrations: [mdx(), sitemap(), react()],
+  vite: {
+    plugins: [
+      tailwindcss(),
+    ]
+  }
 });

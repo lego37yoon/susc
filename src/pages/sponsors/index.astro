@@ -10,6 +10,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 import SponsorCard from "@components/sponsor/SponsorCard.astro";
 
+import "../../styles/global.css";
+
 const sponsors = await getCollection("sponsors");
 
 ---
@@ -38,10 +40,9 @@ const sponsors = await getCollection("sponsors");
                 {
                   sponsors.map((sponsor) => (
                     <SponsorCard
-                      path={`/sponsors/${sponsor.slug}`}
+                      path={`/sponsors/${sponsor.id}`}
                       sponsorName={sponsor.data.sponsorName} 
                       sponsorImg={`${sponsor.data.sponsorImg}`}
-                      website={sponsor.data.website}
                       sponsorDescription={sponsor.data.sponsorDescription}
                     />
                   ))

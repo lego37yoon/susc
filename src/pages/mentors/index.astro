@@ -11,6 +11,8 @@ import SeminarMentorCard from "@components/mentor/SeminarMentorCard.astro";
 
 import { getCollection } from "astro:content";
 
+import "../../styles/global.css";
+
 const studyMentors = await getCollection("studyMentors");
 const seminarMentors = await getCollection("seminarMentors");
 
